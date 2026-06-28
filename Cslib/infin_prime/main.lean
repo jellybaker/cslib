@@ -5,6 +5,7 @@ import Mathlib.Data.ZMod.Basic
 import Cslib.Computability.Languages.RegularLanguage
 import Mathlib.Data.Set.Basic
 import Mathlib.Tactic.Ring
+import Cslib.Computability.Languages.MyhillNerode
 
 open Language DFA
 
@@ -91,4 +92,10 @@ theorem ξ_ne_one : w ∈ L → ξ w ≠ 1 ∧ ξ w ≠ - 1:= by
     rw [hp_eq_1] at prime
     exact not_irreducible_one prime
 
-theorem L_isNotRegular: ¬L.IsRegular:= by sorry
+def meow (i j : Nat) := i > j
+
+-- we'll define powers of a by lists of a right
+
+theorem L_isNotRegular (h:meow i j): ¬L.IsRegular:= by
+  intro contra
+  sorry
